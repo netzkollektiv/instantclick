@@ -88,6 +88,7 @@ var InstantClick = function(document, location) {
     var domain = location.protocol + '//' + location.host
 
     if (a.target // target="_blank" etc.
+        || a.href.indexOf('#') === a.href.length - 1
         || a.hasAttribute('download')
         || a.href.indexOf(domain + '/') != 0 // Another domain, or no href attribute
         || (a.href.indexOf('#') > -1
